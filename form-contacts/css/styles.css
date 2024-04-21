@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --white: #fff;
+    --green: #00ffad;
+    --font-family: 'Clash Display', sans-serif;
+}
+
+body{
+    width: 100%;
+    min-height: 100%;
+    color: var(--white);
+    font-family: var(--font-family);
+}
+
+.container{
+    background-image: linear-gradient(#010636e9, #010636e9), url(../assets/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 40vh;
+    padding: 5rem 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.texts{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    gap: 1.8rem;
+}
+
+.texts__title {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.texts__paragraph{
+    line-height: 1.4rem;
+}
+
+.texts__lists {
+    list-style: none;
+}
+
+.texts__list {
+    
+}
+
+.texts__list + .texts__list{
+    margin-top: 2rem;
+}
+
+.form {
+}
+.form__label {
+}
+.form__label-name {
+}
+.input__name {
+}
+.form__label-email {
+}
+.input__email {
+}
+.form__label-message {
+}
+.form__text {
+}
+.form__submit {
+}
