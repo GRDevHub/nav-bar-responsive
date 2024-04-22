@@ -1,24 +1,25 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root{
+:root {
     --white: #fff;
     --green: #00ffad;
     --font-family: 'Clash Display', sans-serif;
+    --dark-blue: #000e25e9;
 }
 
-body{
+body {
     width: 100%;
     min-height: 100%;
     color: var(--white);
     font-family: var(--font-family);
 }
 
-.container{
-    background-image: linear-gradient(#010636e9, #010636e9), url(../assets/background.jpg);
+.container {
+    background-image: linear-gradient(var(--dark-blue), var(--dark-blue)), url(../assets/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -27,11 +28,17 @@ body{
 
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    /* flex-wrap: wrap; */
     gap: 3rem;
 }
 
-.texts{
+.container__flex {
+    max-width: 600px;
+}
+
+.texts {
     display: flex;
     flex-direction: column;
     /* align-items: center; */
@@ -43,37 +50,140 @@ body{
     font-weight: 700;
 }
 
-.texts__paragraph{
+.texts__paragraph {
     line-height: 1.4rem;
 }
 
 .texts__lists {
     list-style: none;
-}
-
-.texts__list {
-    
-}
-
-.texts__list + .texts__list{
-    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
 }
 
 .form {
+    /* outline: 1px solid red; */
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px -5px var(--green);
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 100%;
+    color: var(--green);
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    gap: 1rem;
 }
+
 .form__label {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
 }
-.form__label-name {
+
+.input {
+    border: 2px solid var(--green);
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--white);
+    padding: .4rem;
+    font-size: 1.1rem;
 }
-.input__name {
-}
-.form__label-email {
-}
-.input__email {
-}
+
 .form__label-message {
+    width: 100%;
 }
+
 .form__text {
+    max-width: 100%;
+    height: 5rem;
+    resize: none;
 }
-.form__submit {
+
+.btn__container {
+    position: relative;
+    outline: 1px solid var(--green);
+    background-color: #ffffff2e;
+    overflow: hidden;
+    width: 100%;
+    padding: 2px;
+    border-radius: 8px;
+    transition: all .3s ease-in;
+}
+
+.btn {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    padding: .8rem;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    border: none;
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    color: var(--dark-blue);
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+    transition: color .3s ease;
+}
+
+.btn__container:has( :hover ), .btn:hover{
+    color: var(--white);
+    transform: scale(1.04);
+}
+
+.btn__span {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 100px;
+    width: 150px;
+    height: 150px;
+    background-color: var(--green);
+    filter: blur(15px);
+    border-radius: 50% 25px 10px 25px;
+    animation: rotate 15s infinite alternate linear both;
+}
+
+.btn__span:nth-last-child(1) {
+    content: "";
+    position: absolute;
+    left: 370px;
+}
+
+@media (width >= 768px) {
+    .container {
+        flex-direction: row;
+        justify-content: center;
+        align-items: start;
+        gap: 3rem;
+        padding: 8rem 3rem;
+    }
+
+    .container__flex{
+        width: 200px;
+        flex-grow: 1;
+        flex-basis: 300px;
+    }
+
+    .form{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .form__label-name, .form__label-email{
+        flex-shrink: 30px;
+    }
+}
+
+
+@keyframes rotate {
+    100% {
+        transform: scale(2) rotate(360deg);
+    }
 }

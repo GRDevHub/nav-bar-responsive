@@ -11,7 +11,7 @@
 
     <main class="container">
         
-        <div class="texts">
+        <div class="texts container__flex">
             <h2 class="texts__title">Contact Us</h2>
             <p class="texts__paragraph">Te iisque labitur eos, nec sale argumentum scribentur, augue disputando in vim. Erat fugit sit at, ius lorem.</p>
             <ul class="texts__lists">
@@ -21,23 +21,27 @@
             </ul>
         </div>
 
-        <form action="#" class="form">
+        <form action="#" class="form container__flex">
             <label class="form__label form__label-name" for="name">
                 Your Name
-                <input class="input__name" type="text" name="name" id="name">
+                <input class="input__name input" type="text" name="name" id="name">
             </label>
 
             <label class="form__label form__label-email" for="email">
                 Your Email
-                <input class="input__email" type="email" name="email" id="email">
+                <input class="input__email input" type="email" name="email" id="email">
             </label>
 
             <label class="form__label form__label-message" for="message">
                 Message
-                <textarea class="form__text" name="message" id="message"></textarea>
+                <textarea class="form__text input" name="message" id="message"></textarea>
             </label>
 
-            <input class="form__submit" type="submit" value="Submit">
+            <div class="btn__container">
+                <button class="btn" type="submit">Submit</button>
+                <span class="btn__span"></span>
+                <span class="btn__span"></span>
+            </div>
         </form>
     </main>
     
